@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings!!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            animation: fadeIn 1s ease-in-out;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .greeting {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .greeting.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    
+        /* Fade-in animation for container */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Enter your name and click the button to see a greeting.</p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button id="greetButton">Greet Me</button>
+        <p id="greetingMessage" class="greeting"></p>
+        <p id="errorMessage" class="error"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
